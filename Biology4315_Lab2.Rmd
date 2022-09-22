@@ -18,4 +18,11 @@ library('vegan')
 library('ggplot2')
 ```
 
+Next, we will put the dune dataet into a variable called dune2 and log1p transform it
+```{r}
+data(dune)
+dune2 = dune
+log1p(dune2)
+```
+
 
