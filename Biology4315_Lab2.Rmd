@@ -25,4 +25,12 @@ dune2 = dune
 log1p(dune2)
 ```
 
+Now, we will perform nmds on dune2 using the function metaMDS
+and assign it to a new variable. 
+We will then access the points and assign it to dpoints
+```{r}
+new_dune2 = metaMDS(dune2)
+dpoints = new_dune2['points']
+
+```
 
