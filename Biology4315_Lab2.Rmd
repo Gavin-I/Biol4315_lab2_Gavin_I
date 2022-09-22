@@ -1,0 +1,11 @@
+---
+title: "Biology-4315: Lab2 Git Practice"
+author: "Gavin Ieong"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
