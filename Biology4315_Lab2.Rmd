@@ -12,25 +12,35 @@ knitr::opts_chunk$set(echo = TRUE)
 # Section One:More Packages (ggplot2 and vegan)
 
 Start by loading the vegan and ggplot2 packages
-```{r,warning=FALSE, message=FALSE}
+```{r libs,warning=FALSE, message=FALSE}
 
 library('vegan')
 library('ggplot2')
 ```
 
 Next, we will put the dune dataet into a variable called dune2 and log1p transform it
-```{r}
+```{r dataset1}
 data(dune)
-dune2 = dune
+dune2 <- dune
 log1p(dune2)
 ```
 
 Now, we will perform nmds on dune2 using the function metaMDS
 and assign it to a new variable. 
 We will then access the points and assign it to dpoints
-```{r}
-new_dune2 = metaMDS(dune2)
-dpoints = new_dune2['points']
+```{r dataset2}
+new_dune2 <- metaMDS(dune2)
+dpoints <- as.data.frame(new_dune2$points)
+dpoints
+```
 
+Finally, we will plot a ggplot using mds1 as my x, and mds2 as my y
+We will set the theme to black and white, and give it a title as well
+Then we will save the plot as a pdf
+
+```{r plot}
+pdf("myplot.pdf")
+ggplot(dpoints, aes(x=MDS1, y =MDS2), )+geom_point()+theme_bw() + ggtitle("Plot of MDS1 and MDS2 From dpoints")
+dev.off()
 ```
 
