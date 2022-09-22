@@ -10,3 +10,12 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 # Section One:More Packages (ggplot2 and vegan)
+
+Start by loading the vegan and ggplot2 packages
+```{r,warning=FALSE, message=FALSE}
+
+library('vegan')
+library('ggplot2')
+```
+
+
